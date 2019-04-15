@@ -1,9 +1,22 @@
 var scene = new THREE.Scene();
+var clock = new THREE.Clock();
+
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 var renderer = new THREE.WebGLRenderer();
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
+var effectGlitch = new THREE.GlitchPass()
+var composer = new THREE.EffectComposer(renderer)
+var renderPass = new THREE.RenderPass(scene, camera)
+var effect = new THREE.AnaglyphEffect(renderer, window.innerWidth, window.innerHeight);
+
+
+composer.addPass(renderPass)
+composer.addPass(effectGlitch)
+composer.setSize(window.innerWidth / 2, window.innerHeight / 2)
+effectGlitch.goWild = true
+effectGlitch.renderToScreen = true
 var intersectedObject, mouseOn;
 
 camera.position.z = 20;
@@ -23,6 +36,9 @@ var cubeMat = new THREE.MeshBasicMaterial({ color: 'green' });
 var cube = new THREE.Mesh(cubeGeo, cubeMat);
 cube.position.y = 2.5
 // scene.add(cube);
+setTimeout(function () { effectGlitch.goWild = false; }, 1000);
+setTimeout(function () { effectGlitch.goWild = true; }, 15420);
+setTimeout(function () { effectGlitch.goWild = false; }, 15520);
 
 var onMouseMove = function (e) {
   raycaster.setFromCamera(mouse, camera);
@@ -46,9 +62,12 @@ var onKeyUp = function (e) {
 };
 
 var animate = function () {
+  renderer.render(scene, camera);
+  effect.render(scene, camera);
+  composer.render(clock.getDelta());
   controls.update;
   requestAnimationFrame(animate);
-  renderer.render(scene, camera);
+
 };
 animate();
 
@@ -65,4 +84,4 @@ window.addEventListener('keyup', onKeyUp, false);
 window.addEventListener('resize', windowResizeHandler);
 
 document.body.style.margin = 0;
-document.body.appendChild(renderer.domElement);
+$('#three-content').append(renderer.domElement);
