@@ -6,6 +6,7 @@
 			body { margin: 0; }
 			canvas { width: 100%; height: 100% }
       #typed  {
+        white-space: nowrap;
         font-family: 'Overpass Mono', monospace;
         font-size: 10pt;
         background-color: black;
@@ -28,46 +29,59 @@
     <div id='typed-content'>
       <span id="typed"></span>
       <div id="typed-strings">
-      <p>
-        > $: To access database, please log in:
-        <br>
-        > $: username: ^2000 *^200*^200*^200*^300*^300*^200*^300
-        <br>
-        > $: password: ^1000 *^200*^200*^200*^300*^300*^200*^300*^200*^200*^200*^200*^200
-        <br>
-        .
-        <br>
-        .
-        <br>
-        .
-        <br>
-        > $: [guest_access: granted]
-        <br>
-        > $: ACCESSING_CITY_META-ARCHIVES:: [sourceseed: hOShi]
-        <br>
-        .
-        <br>
-        > $: [request: bestiary_data]
-        <br>
-        .
-        <br>
-        .
-        <br>
-        .
-        <br>
-        > $: BEGIN_TRANSMISSION
-        <br>
-        > $: LOADING:: ARCHIVE DATUM_0001::
-        <br>
-        > $: LOADING:: ARCHIVE DATUM_0002::
-        <br>
-        > $: LOADING:: ARCHIVE DATUM_0003::
-      </p>
+        <p>
+          > $: To access database, please log in:
+          <br>
+          > $: username: ^1000 *^100*^100*^100*^200*^200*^100*^200
+          <br>
+          > $: password: ^1000 *^100*^100*^100*^200*^200*^100*^200*^100*^100*^100*^100*^100
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          > $: [guest_access: granted]
+          <br>
+          > $: ACCESSING_CITY_META-ARCHIVES:: [sourceseed: hOShi]
+          <br>
+          .
+          <br>
+          > $: [request: bestiary_data]
+          <br>
+          .
+          <br>
+          .
+          <br>
+          .
+          <br>
+          > $: BEGIN_TRANSMISSION
+          <br>
+          > $: LOADING:: ARCHIVE DATUM_0001::
+          <br>
+          > $: LOADING:: ARCHIVE DATUM_0002::
+          <br>
+          > $: LOADING:: ARCHIVE DATUM_0003::
+        </p>
+        <pre>
+          <pre>  
+                ███╗   ███╗███████╗████████╗ █████╗      █████╗ ██████╗  ██████╗██╗  ██╗██╗██╗   ██╗███████╗███████╗
+                ████╗ ████║██╔════╝╚══██╔══╝██╔══██╗    ██╔══██╗██╔══██╗██╔════╝██║  ██║██║██║   ██║██╔════╝██╔════╝
+                ██╔████╔██║█████╗     ██║   ███████║    ███████║██████╔╝██║     ███████║██║██║   ██║█████╗  ███████╗
+                ██║╚██╔╝██║██╔══╝     ██║   ██╔══██║    ██╔══██║██╔══██╗██║     ██╔══██║██║╚██╗ ██╔╝██╔══╝  ╚════██║
+                ██║ ╚═╝ ██║███████╗   ██║   ██║  ██║    ██║  ██║██║  ██║╚██████╗██║  ██║██║ ╚████╔╝ ███████╗███████║
+                ╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝    ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝╚══════╝
+                                                                                                                        
+          </pre> 
+        </pre>
       </div>
       <script>
         var typed = new Typed('#typed', {
-            stringsElement: '#typed-strings'
-
+            stringsElement: '#typed-strings',
+            typeSpeed: -1000,
+            fadeOut: true,
+            fadeOutDelay: false
           });
       </script>
     </div>
