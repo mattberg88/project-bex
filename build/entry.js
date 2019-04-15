@@ -30,15 +30,23 @@ planeMat.side = THREE.DoubleSide;
 var plane = new THREE.Mesh(planeGeo, planeMat);
 plane.rotation.x += 1.5708
 // scene.add(plane);
+var typed = new Typed('#typed', {
+  stringsElement: '#typed-strings',
+  typeSpeed: -1000,
+  fadeOut: true,
+  fadeOutDelay: false,
+  onStringTyped: function (pos, self) { 
+    setTimeout(function () { effectGlitch.goWild = true; }, 600);
+    setTimeout(function () { effectGlitch.goWild = false; }, 700);
+   },
 
+});
 var cubeGeo = new THREE.BoxGeometry(5, 5, 5);
 var cubeMat = new THREE.MeshBasicMaterial({ color: 'green' });
 var cube = new THREE.Mesh(cubeGeo, cubeMat);
 cube.position.y = 2.5
 // scene.add(cube);
 setTimeout(function () { effectGlitch.goWild = false; }, 1000);
-setTimeout(function () { effectGlitch.goWild = true; }, 15420);
-setTimeout(function () { effectGlitch.goWild = false; }, 15520);
 
 var onMouseMove = function (e) {
   raycaster.setFromCamera(mouse, camera);
