@@ -1,14 +1,73 @@
 <html>
 	<head>
-		<title>My first three.js app</title>
+		<title>META-ARCHIVES</title>
 		<style>
 			body { margin: 0; }
 			canvas { width: 100%; height: 100% }
+      #typed  {
+        background-color: black;
+        color: green;
+      }
+      #typed-content {
+        padding: 20px;
+        background: black;
+      }
+      .typed-cursor{
+        opacity: 1;
+        color: green;
+      }
 		</style>
 	</head>
 	<body>
 		<script src="assets/js/Three.js"></script>
-		<script src="assets/js/OrbitControls.js"></script>
-		<script src="./entry.js"></script>
-	</body>
+    <script src="assets/js/OrbitControls.js"></script>
+    <script src="assets/js/Typed.js"></script>
+    <div id='typed-content'>
+      <span id="typed"></span>
+      <div id="typed-strings">
+      <p>
+        > $: To access database, please log in:
+        <br>
+        > $: username: ^2000 *^200*^200*^200*^300*^300*^200*^300
+        <br>
+        > $: password: ^1000 *^200*^200*^200*^300*^300*^200*^300*^200*^200*^200*^200*^200
+        <br>
+        .
+        <br>
+        .
+        <br>
+        .
+        <br>
+        > $: [guest_access: granted]
+        <br>
+        > $: ACCESSING_CITY_META-ARCHIVES:: [sourceseed: hOShi]
+        <br>
+        .
+        <br>
+        > $: [request: bestiary_data]
+        <br>
+        .
+        <br>
+        .
+        <br>
+        .
+        <br>
+        > $: BEGIN_TRANSMISSION
+        <br>
+        > $: LOADING:: ARCHIVE DATUM_0001::
+        <br>
+        > $: LOADING:: ARCHIVE DATUM_0002::
+        <br>
+        > $: LOADING:: ARCHIVE DATUM_0003::
+      </p>
+      </div>
+      <script>
+        var typed = new Typed('#typed', {
+            stringsElement: '#typed-strings'
+
+          });
+      </script>
+    </div>
+    <script src="./entry.js"></script>
+  </body>
 </html>

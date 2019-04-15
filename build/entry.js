@@ -11,19 +11,18 @@ camera.position.y = 10
 camera.lookAt(new THREE.Vector3());
 
 renderer.setSize(window.innerWidth, window.innerHeight);
-
 var planeGeo = new THREE.PlaneGeometry(50, 50);
 var planeMat = new THREE.MeshBasicMaterial({ color: 'gray' });
 planeMat.side = THREE.DoubleSide;
 var plane = new THREE.Mesh(planeGeo, planeMat);
 plane.rotation.x += 1.5708
-scene.add(plane);
+// scene.add(plane);
 
 var cubeGeo = new THREE.BoxGeometry(5, 5, 5);
 var cubeMat = new THREE.MeshBasicMaterial({ color: 'green' });
 var cube = new THREE.Mesh(cubeGeo, cubeMat);
 cube.position.y = 2.5
-scene.add(cube);
+// scene.add(cube);
 
 var onMouseMove = function (e) {
   raycaster.setFromCamera(mouse, camera);
