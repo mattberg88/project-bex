@@ -30,6 +30,7 @@ planeMat.side = THREE.DoubleSide;
 var plane = new THREE.Mesh(planeGeo, planeMat);
 plane.rotation.x += 1.5708
 // scene.add(plane);
+
 var typed = new Typed('#typed', {
   stringsElement: '#typed-strings',
   typeSpeed: -1000,
@@ -39,7 +40,9 @@ var typed = new Typed('#typed', {
     setTimeout(function () { effectGlitch.goWild = true; }, 600);
     setTimeout(function () { effectGlitch.goWild = false; }, 700);
    },
-
+  onComplete: function () { 
+    $('#asciiContainer').load('./assets/ascii/fish.html');
+  }
 });
 var cubeGeo = new THREE.BoxGeometry(5, 5, 5);
 var cubeMat = new THREE.MeshBasicMaterial({ color: 'green' });
