@@ -24,6 +24,7 @@ camera.position.y = 10
 camera.lookAt(new THREE.Vector3());
 
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor('rgb(2, 8, 2)')
 var planeGeo = new THREE.PlaneGeometry(50, 50);
 var planeMat = new THREE.MeshBasicMaterial({ color: 'gray' });
 planeMat.side = THREE.DoubleSide;
@@ -33,7 +34,6 @@ plane.rotation.x += 1.5708
 
 var typed = new Typed('#typed', {
   stringsElement: '#typed-strings',
-  typeSpeed: -1000,
   fadeOut: true,
   fadeOutDelay: false,
   onStringTyped: function (pos, self) { 
@@ -42,8 +42,14 @@ var typed = new Typed('#typed', {
    },
   onComplete: function () { 
     $('#asciiContainer').load('./assets/ascii/fish.html');
+    setTimeout(function () { $('#asciiContainer').hide() }, 3000);
   }
 });
+$('#typed').click(function () {
+  $("#typed").text("");
+  $("#typed").removeData('typed');
+  $("#typed").stop();
+})
 var cubeGeo = new THREE.BoxGeometry(5, 5, 5);
 var cubeMat = new THREE.MeshBasicMaterial({ color: 'green' });
 var cube = new THREE.Mesh(cubeGeo, cubeMat);
