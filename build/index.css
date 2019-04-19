@@ -1,0 +1,54 @@
+body { 
+  margin: 0;
+  background-color:rgb(2, 8, 2);
+}
+canvas { width: 100%; height: 100% }
+#backButton {
+  padding-top:20px;
+}
+#menu {
+  padding-top:30px;
+  text-align: center;
+}
+.menuItems {
+  padding:40px;
+}
+a, p{
+  display: inline;
+  font-family: 'Overpass Mono', monospace;
+  font-size: 10pt;
+  color: green;
+  text-shadow:0px 0px 5px green, 0px 0px 32px green;
+  text-decoration: none;
+}
+#typed  {
+  white-space: nowrap;
+  font-family: 'Overpass Mono', monospace;
+  font-size: 10pt;
+  color: green;
+  text-shadow:0px 0px 5px green, 0px 0px 32px green;
+}
+#typed-content {
+  padding: 20px;
+  background: transparent;
+}
+.typed-cursor{
+  opacity: 1;
+  color: green;
+}
+#three-content {
+  z-index:-1;
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+#asciiContainer {
+  text-align: center;
+  text-shadow:0px 0px 5px green, 0px 0px 32px green;
+  color: green;
+  padding: 20px;
+}
+#fish {
+  text-shadow:0px 0px 1px green, 0px 0px 8px green;
+  font-size:4px;
+}

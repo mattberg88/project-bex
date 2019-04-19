@@ -2,49 +2,11 @@
 	<head>
     <title>META-ARCHIVES</title>
     <link href="https://fonts.googleapis.com/css?family=Overpass+Mono|Quantico" rel="stylesheet">
-		<style>
-			body { 
-        margin: 0;
-        background-color:rgb(2, 8, 2);
-      }
-			canvas { width: 100%; height: 100% }
-      #typed  {
-        white-space: nowrap;
-        font-family: 'Overpass Mono', monospace;
-        font-size: 10pt;
-        color: green;
-        text-shadow:0px 0px 5px green, 0px 0px 32px green;
-      }
-      #typed-content {
-        padding: 20px;
-        background: transparent;
-      }
-      .typed-cursor{
-        opacity: 1;
-        color: green;
-      }
-      #three-content {
-        z-index:-1;
-        position:absolute;
-        width:100%;
-        height:100%;
-      }
-      #asciiContainer {
-        text-align: center;
-        text-shadow:0px 0px 5px green, 0px 0px 32px green;
-        color: green;
-        padding: 20px;
-      }
-      #fish {
-        text-shadow:0px 0px 1px green, 0px 0px 8px green;
-        font-size:4px;
-      }
-		</style>
+    <link href="index.css" rel="stylesheet">
 	</head>
 	<body>
     <script src="assets/js/JQuery.js"></script>
 		<script src="assets/js/Three.js"></script>
-    <script src="assets/js/OrbitControls.js"></script>
     <script src="assets/js/Typed.js"></script>
     <script src="assets/js/Typed.js"></script>
     <script src="assets/js/EffectComposer.js"></script>
@@ -55,6 +17,7 @@
     <script src="assets/js/GlitchPass.js"></script>
     <script src="assets/js/DigitalGlitch.js"></script>
     <div id='three-content'></div>
+    <div id='menu-content'></div>
     <div id='typed-content'>
       <span id="typed"></span>
       <div id="typed-strings">
@@ -96,8 +59,7 @@
         <p></p>
       </div>
     </div>
-    <div id='asciiContainer'>
-    </div>
+    <div id='asciiContainer'></div>
     <script src="./entry.js"></script>
   </body>
 </html>
