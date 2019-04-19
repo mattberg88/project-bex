@@ -12,7 +12,7 @@ composer.addPass(effectGlitch)
 composer.setSize(window.innerWidth / 2, window.innerHeight / 2)
 effectGlitch.goWild = true
 effectGlitch.renderToScreen = true
-setTimeout(function () { effectGlitch.goWild = false; }, 600);
+setTimeout(function () { effectGlitch.goWild = false; }, 400);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor('rgb(2, 8, 2)')
 
@@ -28,7 +28,7 @@ var typed = new Typed('#typed', {
 
 var loadMenu = function() {
   setTimeout(function () { effectGlitch.goWild = true; }, 10);
-  setTimeout(function () { effectGlitch.goWild = false; }, 200);
+  setTimeout(function () { effectGlitch.goWild = false; }, 100);
   state = 1;
   typed.destroy()
   $('#asciiContainer').load('./assets/html/fish.html');
